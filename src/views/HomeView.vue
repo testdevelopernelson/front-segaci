@@ -14,7 +14,7 @@
             <h6>Precio: <strong>{{ item.price }}</strong></h6>
             <h6>Cantidad: <strong>{{ item.stock }}</strong></h6>
             <div class="actions">
-              <a href="#" class="btn btn-primary" @click.prevent="editProduct(item)">Editar</a>
+              <a href="#" class="btn btn-primary" @click.prevent="editProduct(item, item.id)">Editar</a>
               <a href="#" class="btn btn-danger" @click.prevent="deleteProduct(item.id)">Eliminar</a>
             </div>
           </div>
@@ -38,13 +38,15 @@
       createProduct } 
     from '../services/product';
     import FormProduct from '../components/FormProduct.vue';
+    import type { Product } from '../interfaces/Product';
     export default{
       components: {FormProduct},
       props:[],
       data(){
         return {
           products: [],
-          product: {},
+          product: null,
+          id_product: null,
           show_form: false,
           action: 'new'
         }
@@ -93,8 +95,9 @@
           this.show_form= true;
           this.product= {};
         },
-        editProduct(item: {}){
+        editProduct(item: {}, id){
           this.product= item;
+          this.id_product= id;
           this.action= 'update';
           this.show_form= true;
         },
@@ -104,7 +107,7 @@
             await this.listProducts();
           }
         },
-        async createProduct(product: any){
+        async createProduct(product: Product){
           let loader = this.$loading.show({});
           const resp= await createProduct(product);
           if(resp.success){
@@ -116,9 +119,9 @@
           }          
           loader.hide();
         },
-        async updateProduct(product: any){          
+        async updateProduct(product: Product){          
           let loader = this.$loading.show({});
-          const resp= await updateProduct(product, product.id);
+          const resp= await updateProduct(product, this.id_product);
           if(resp.success){
             this.$toast.success(resp.message);
             await this.listProducts();

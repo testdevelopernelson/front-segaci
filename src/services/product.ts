@@ -38,13 +38,13 @@ export async function createProduct(data: Product) {
             $toast.error('Falló la conexión');
             throw error;
         } else {
-            $toast.error('Ocurrió un error al intentar laznzar la peticion');
+            $toast.error('Ocurrió un error al intentar lanzar la peticion');
             throw error;
         }
     }
 }
 
-export async function updateProduct(data: Product, id: number) {
+export async function updateProduct(data: Product, id: Number) {
     try {
         const response = await  axios.put(`${url}/api/products/${id}`, data);
         return response.data;
@@ -55,7 +55,7 @@ export async function updateProduct(data: Product, id: number) {
             $toast.error('Falló la conexión');
             throw error;
         } else {
-            $toast.error('Ocurrió un error al intentar laznzar la peticion');
+            $toast.error('Ocurrió un error al intentar lanzar la peticion');
             throw error;
         }
     }
@@ -72,7 +72,7 @@ export async function showProduct(id: number) {
             $toast.error('Falló la conexión');
             throw error;
         } else {
-            $toast.error('Ocurrió un error al intentar laznzar la peticion');
+            $toast.error('Ocurrió un error al intentar lanzar la peticion');
             throw error;
         }
     }
@@ -89,7 +89,7 @@ export async function deleteProduct(id: number) {
             $toast.error('Falló la conexión');
             throw error;
         } else {
-            $toast.error('Ocurrió un error al intentar laznzar la peticion');
+            $toast.error('Ocurrió un error al intentar lanzar la peticion');
             throw error;
         }
     }

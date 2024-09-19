@@ -32,6 +32,4 @@ const optionsLoader = {
 app.use(LoadingPlugin, optionsLoader);
 app.mount('#app')
 
-app.config.globalProperties.myGlobal = () => console.log('it works!');
-
 import 'bootstrap/dist/js/bootstrap.min.js';
