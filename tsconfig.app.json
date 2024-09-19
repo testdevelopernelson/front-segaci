@@ -1,0 +1,25 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": [
+    "src/**/__tests__/*",
+    "node_modules/**"
+  ],
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["esnext", "dom", "es2016"],
+    "composite": true,
+    "declaration": true,
+    "outDir": "./lib",
+    "noImplicitAny": false,    
+    "allowJs": true,
+    "importHelpers": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "strict": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+  },
+  "compileOnSave": false
+}

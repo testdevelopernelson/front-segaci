@@ -1,0 +1,37 @@
+@import './base.css';
+
+
+.logo img{
+  width: 50px;
+}
+
+.card.product{
+  min-height: 250px;
+}
+
+.card.product .actions{  
+  width: 92%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 9px;
+}
+
+.card.product .actions a.btn-danger{
+  display: flex;
+  justify-content: end;
+}
+
+.form {
+  width: 50%;
+  margin: auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.btn.btn-outline-dark.see-more {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
