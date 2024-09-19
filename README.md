@@ -6,7 +6,7 @@ Desarrollo Fornt en Vue 3 y typescript, que realiza un CRUD completo para admini
 
 Cambiar la variable VITE_API_URL en los archivos de variables de entorno que apunten a la URL base del Back, tanto de pruebas como de desarrollo.
 
-## Instaler el proyecto
+## Instalar el proyecto
 
 ```sh
 npm install
